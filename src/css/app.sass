@@ -1,0 +1,55 @@
+// colors
+.body--light
+  --bg-color: #eef1fc
+  svg
+    color: white
+.body--dark
+  --bg-color: #121212
+  svg
+    color: #616161
+
+body, .q-card.q-dialog-plugin
+  background-color: var(--bg-color)
+
+.text-grey
+  color: $grey
+
+
+// container
+.container
+  width: 100%
+  padding: 0 12px
+  margin-right: auto
+  margin-left: auto
+
+@media(min-width: 960px)
+  .container
+    max-width:900px
+
+@media(min-width: 1264px)
+  .container
+    max-width:1185px
+
+@media(min-width: 1904px)
+  .container
+    max-width:1785px
+
+
+// positions
+$positions: ("top", "right", "bottom", "left")
+
+@each $name in $positions
+  .border-#{$name}
+    border-#{$name}: 1px solid $grey-4 !important
+
+
+// seats
+.seatmap__seat_available
+  filter: invert(0.5) sepia(1) hue-rotate(180deg) saturate(500%)
+
+.body--light .seatmap__seat_blocked
+  opacity: 0.2
+
+.body--dark .seatmap__seat_blocked
+  filter: invert(1)
+  opacity: 0.2
